@@ -13,9 +13,9 @@
 }
 
 #show h1{
-  font-family: 'Arial';
+  font-family: 'Times New Roman';
   font-weight: bold;
-  font-size:50px;
+  font-size:43px;
 }
 
 .negrit{
@@ -44,4 +44,37 @@
 .panel p {
     font-size:12px;
     font-family: 'Arial', serif;
+}
+
+#show img {
+    margin-left: 115%;
+}
+
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+    float: right;
+}
+
+.footer {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;;
+    height:80px;
+    padding-top:10px;
+    background-color:#0049BF;
+    text-align:center;
+}
+
+.div {
+    position: relative;
+    left: 30px;
+    border: 3px solid #73AD21;
 }

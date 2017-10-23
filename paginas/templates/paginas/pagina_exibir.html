@@ -12,16 +12,16 @@
 
 <body>
 
-    {% for pessoa in pessoa %}
-
         <div class="container-fluid">
             <div class="section">
                 <div class="container" id="show">
                     <div class="row">
-                        <div class="col-md-8">
-                            <h1>{{pessoa.name}}</h1>
-                            <h3>{{pessoa.current_position}}</h3>
-                            <p><a href="{{pessoa.github}}"> <i>Conheça meu repositorio<i></a></p>
+                        <div class="col-md-10">
+                            <h1>Difusão da Informação na Administração Pública</h1>
+                            <img src="/logo.png"/>
+                            <h4>Priscila Brasilina de Oliveira / 135053-6</h4>            
+                            <h4>Rewth Negreiros Nunes / 150044-9</h4>
+                            <p><a href="https://github.com/rewthnunes/ProjetoSite"> <i>GitHub do Projeto<i></a></p> 
                         </div>
                     </div>
                 </div>
@@ -33,72 +33,65 @@
                 <div class="row">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h2>Dados Pessoais</h2>
+                            <h2>Filtro para gerar relatório</h2>
                         </div>
                         <div class="panel-body">
-                            <p><span class="negrit">Data de nascimento : </span>{{pessoa.data_nascimento}}</p>
-                            <p><span class="negrit">Endereço : </span>{{pessoa.adress}}</p>
-                            <p><span class="negrit">Cidade :</span>{{pessoa.city}} <span class="negrit">cep: </span>{{pessoa.cep}}</p>
-                            <p><span class="negrit">Tel :</span> {{pessoa.phone}} <span class="negrit"> Cel: </span>{{pessoa.mobile}}</p>
-                            <p><span class="negrit">E-mail :</span>{{pessoa.email}}</p>
-                        </div>
-                    </div>
+ 							<select name="select" id="ano"> 
+ 								<option value="">Ano</option>						
+ 								<option value="2012">2012</option>
+ 								<option value="2013">2013</option>
+ 								<option value="2014">2014</option>
+ 								<option value="2015">2015</option>
+ 								<option value="2016">2016</option>
+ 							</select>
+ 							<select name="regiao" id="regiao">
+ 								<option value="">Região</option>
+ 								<option value="norte">Norte</option>
+ 								<option value="nordeste">Nordeste</option>
+ 								<option value="centro">Centro-Oeste</option>
+ 								<option value="sul">Sul</option>
+ 							</select>
+							<select name="uf" id="uf">
+								<option value="">Capitais</option>
+								<option value="AC">AC</option>
+								<option value="AL">AL</option>
+								<option value="AM">AM</option>
+								<option value="AP">AP</option>
+								<option value="BA">BA</option>
+								<option value="CE">CE</option>
+								<option value="DF">DF</option>
+								<option value="ES">ES</option>
+								<option value="GO">GO</option>
+								<option value="MA">MA</option>
+								<option value="MG">MG</option>
+								<option value="MS">MS</option>
+								<option value="MT">MT</option>
+								<option value="PA">PA</option>
+								<option value="PB">PB</option>
+								<option value="PE">PE</option>
+								<option value="PI">PI</option>
+								<option value="PR">PR</option>
+								<option value="RJ">RJ</option>
+								<option value="RN">RN</option>
+								<option value="RS">RS</option>
+								<option value="RO">RO</option>
+								<option value="RR">RR</option>
+								<option value="SC">SC</option>
+								<option value="SE">SE</option>
+								<option value="SP">SP</option>
+								<option value="TO">TO</option>
+							 </select>
+							 <button class="button button2">Enviar</button>
+							 <div>teste</div> 
+ 			            </div> 			            
+                    </div>                    
                 </div>
             </div>
         </div>
 
-         <div class="section">
-             <div class="container">
-                 <div class="row">
-                     <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h2 id="Conhecimentos">Conhecimentos</h2>
-                        </div>
-
-                        <div class="panel-body">
-                            <p>{{pessoa.conhecimentos|linebreaks}}</p>
-                        </div>
-                    </div>
-                </div>
-             </div>
-         </div>
-
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                     <div class="panel panel-primary">
-                        <div class="panel-heading">
-                             <h2 id="Experencia">Experiência Profissional</h2>
-                        </div>
-                        <div class="panel-body">
-                            <p><span class="negrit">Empresa : </span>{{pessoa.empresa}}</p>
-                            <p><span class="negrit">Cargo : </span>{{pessoa.current_position}}</p>
-                        </div>
-                    </div>
-                </div>
-             </div>
-        </div>
-
-         <div class="section">
-             <div class="container">
-                 <div class="row">
-                     <div class="panel panel-primary">
-                             <div class="panel-heading">
-                                 <h2 id="Resumo">Resumo</h2>
-                             </div>
-                             <div class="panel-body">
-                                 <p><span class="negrit"></span>{{pessoa.about}}</p>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    {% empty %}
-     <div class="alert alert-danger">
-         <h2>Você ainda não cadastrou nehuma informação!!</h2>
-     </div>
-    {% endfor %}
+    <div class="footer">
+        <H4>IFSP CAMPINAS</H4>
+    </div>
 
 </body>
 </html>
