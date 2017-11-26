@@ -78,3 +78,48 @@
     left: 30px;
     border: 3px solid #73AD21;
 }
+
+img { 
+    position: relative;
+    width: 30%;
+    height: auto;   
+    margin-top: -140px;
+}
+
+.logotipo { 
+    position: relative;
+    width: 60%;
+    height: auto;   
+    margin-top: -310px;
+}
+
+
+.rodape {
+    background-color: #0000CD;
+    color: white;
+    margin-bottom:  0px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px blue;
+}
+
+.button {
+    position: absolute; 
+    left: 83%; /* posiciona a 90px para a esquerda */ 
+    top:  390px; /* posiciona a 70px para baixo */
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

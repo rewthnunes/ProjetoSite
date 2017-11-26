@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+
 # Create your models here.
 
 class SaoPaulo(models.Model):
@@ -23,8 +24,21 @@ class SaoPaulo(models.Model):
 		return self.name
 
 	class Meta:
-		verbose_name = 'São Paulo'
-		verbose_name_plural = 'São Paulo'
+		verbose_name = 'Local de Pesquisa'
+		verbose_name_plural = 'Local de Pesquisa'
+
+#------------------------------------------------------------------------------------------
+
+class Populacao(models.Model):
+	SaoPaulo = models.ForeignKey(SaoPaulo, on_delete=models.CASCADE)
+	numero = models.CharField(max_length=10, verbose_name='Habitantes')
+
+	def __str__(self):
+		return self.numero
+
+	class Meta:
+		verbose_name = 'População'
+		verbose_name_plural = 'População'
 
 #---------------------------------------------------------------------------------------------------
 

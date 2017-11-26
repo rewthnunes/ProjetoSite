@@ -1,54 +1,12 @@
 
 {% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
+
 <style>
 
-img { 
-    position: relative;
-    width: 30%;
-    height: auto;   
-    margin-top: -180px;
-}
-
-.logotipo { 
-    position: relative;
-    width: 60%;
-    height: auto;   
-    margin-top: -310px;
-}
-
-
-.rodape {
-    background-color: #0000CD;
-    color: white;
-    margin-bottom:  0px;
-    padding: 30px;
-    box-shadow: 0px 0px 10px blue;
-}
-
-.button {
-    position: absolute; 
-    left: 83%; /* posiciona a 90px para a esquerda */ 
-    top:  365px; /* posiciona a 70px para baixo */
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-.button2:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
 </style>
 
 	<title>Projeto Python</title>
@@ -79,10 +37,10 @@ img {
                     </div>
                 </div>
             </div>
-        </div>        
-
+        </div>    
+   
     {% for sp in sp %}
-
+        
         <div class="section">
             <div class="container">
                 <div class="row">
@@ -92,7 +50,10 @@ img {
                         </div>
                         <div class="panel-body">
                             <p><span class="negrit">Região :</span>{{sp.regiao}}</p>
-                            <p><span class="negrit">Ano Base :</span>{{sp.ano}}</p>
+                            <p><span class="negrit">Ano Base :</span>{{sp.ano}}</p> 
+                            {% for hb in hb %}                      
+                            <p><span class="negrit">Qtd Habitantes :</span>{{hb.numero}}</p>    
+                            {% endfor %}                
                             <p><span class="negrit">D1 - Maturidade : </span>{{sp.D1}}</p>
                             <p><span class="negrit">D2 - Cominicabilidade : </span>{{sp.D2}}</p>
                             <p><span class="negrit">D3 - Disponibilidade :</span>{{sp.D3}}</p> 
@@ -119,10 +80,11 @@ img {
      <div class="alert alert-danger">
          <h2>Você ainda não cadastrou nehuma informação!!</h2>
      </div>
+
     {% endfor %} 
 
     <footer class="rodape">   
-        <span style="margin-left: 40px "><h3>IFSP - CAMPINAS / 2017</h3></span>
+        <span style="margin-top: 50px "><h3>IFSP - CAMPINAS / 2017</h3></span>
     </footer>
         <div class="col-md-4" style="margin-left: 400px margin-bottom:  225px; float: right" >        
             <img src="http://networkstatic.net/wp-content/uploads/2012/09/python.png">
