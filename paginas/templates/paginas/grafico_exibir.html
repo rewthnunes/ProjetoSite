@@ -1,0 +1,261 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="https://www.iconsdb.com/green-icons/python-icon.html" type="image/x-icon"/>
+<style>
+
+</style>
+
+    <title>Projeto Python</title>
+
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+    rel="stylesheet" type="text/css">
+
+    <link href="{% static 'css/style.css' %}"rel="stylesheet" type="text/css">
+
+</head>
+
+<body>  
+
+
+        <div class="container-fluid">
+            <div class="section">
+                <div class="container" id="show">
+                    <div class="row">
+                        <div class="col-md-8">                                
+                            <div class="col-md-11"> 
+                                <h1>Dados Coletados...</h1>   
+                                <h2>Priscila / Rewth</h2>
+                                <h3>Projeto: Difusão da Informação na Administração Pública</h3>
+                                <a href="/" > 
+                                    <button class="button3" type="button" id="btnUpdate" data-toogle="modal"  >Voltar <</button>
+                                </a>   
+                                                   
+                                <img class="logotipo" src="https://www2.cmp.ifsp.edu.br/portal/images/ifsp.png">
+
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        
+            <div class="section">
+                <div class="container" id="show">
+                    <div class="row">
+                        <div class="col-md-8">                                
+                            <div class="col-md-8"> 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<canvas id="porRegiao" width="100" height="100"></canvas>
+
+<script>
+
+
+var ctx = document.getElementById("porRegiao").getContext('2d');
+var porRegiao = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Sul", "Sudeste", "Centro-Oeste", "Norte", "Nordeste"],
+        datasets: [{
+            label: 'Nota geral por Região',
+            data: [100, 140, 187, 40, 80],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 3
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+
+
+</script>
+
+
+<hr></hr>
+<!--/////////////////////////////////////////////////////////////////////////////-->
+
+<canvas id="graph2" width="100" height="100"></canvas>
+
+<script>
+
+{% block jquery %}
+var endpoint = '/grafico_exibir/'
+
+$.ajax({
+    method: "GET",
+    url: endpoint,
+    sucess: function(graph){
+        dados = graph.sp        
+    },
+    error: function(error_data){
+        console.log("error")
+        console.log(error_data)
+    }
+})
+{% endblock %}
+
+var ctx = document.getElementById("graph2").getContext('2d');
+var graph2 = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["D1","D2","D3","D4","D5","D6","D7","D8","D9"],
+        datasets: [{
+            label: 'Nota geral por Região',
+            //data: [dados],
+            data: [12, 19, 8, 21, 13, 44, 18, 6, 0],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 3
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+<hr></hr>
+            <div class="section">
+                <div class="container" id="show">
+                    <div class="row">
+                        <div class="col-md-9">                                
+                            <div class="col-md-9"> 
+
+
+<canvas id="graph3" width="100" height="100"></canvas>
+
+<script>
+var ctx = document.getElementById("graph3").getContext('2d');
+var graph3 = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: ["Rio Branco","Maceió","Macapá","Manaus","Salvador","Fortaleza","Brasília",
+        "Vitória","Goiânia","São Luís","Cuiabá","Campo Grande","Belo Horizonte","Belém",
+        "João Pessoa","Curitiba","Recife","Terezina","Rio de Janeiro","Natal","Porto Alegre",
+        "Porto Velho","Boa Vista","Florianópolis","São Paulo","Aracaju","Palmas"],
+        datasets: [{
+            label: 'Nota geral por Região',
+            data: [122, 119, 82, 77, 147, 95, 187, 130, 154,
+                   58, 85, 100, 154, 120, 110, 103, 74, 88, 67,
+                   95, 114, 175, 135, 175, 111, 94, 102],
+            backgroundColor: [
+                'rgba(75, 192, 192, 1.2)',
+                'rgba(153, 102, 255, 1.2)',
+                'rgba(75, 192, 192, 1.2)',
+                'rgba(75, 192, 192, 1.2)',
+                'rgba(153, 102, 255, 1.2)',
+                'rgba(153, 102, 255, 1.2)',
+                'rgba(75, 192, 192, 1.2)',
+                'rgba(54, 162, 235, 1.2)',
+                'rgba(75, 192, 192, 1.2)',
+                'rgba(153, 102, 255, 1.2)',
+                'rgba(75, 192, 192, 1.2)',
+                'rgba(75, 192, 192, 1.2)',
+                'rgba(54, 162, 235, 1.2)',
+                'rgba(255, 99, 132, 1.2)',
+                'rgba(153, 102, 255, 1.2)',
+                'rgba(255, 99, 132, 1.2)',
+                'rgba(153, 102, 255, 1.2)',
+                'rgba(153, 102, 255, 1.2)',
+                'rgba(54, 162, 235, 1.2)',
+                'rgba(153, 102, 255, 1.2)',
+                'rgba(255, 99, 132, 1.2)',
+                'rgba(75, 192, 192, 1.2)',
+                'rgba(75, 192, 192, 1.2)',
+                'rgba(255, 99, 132, 1.2)',
+                'rgba(54, 162, 235, 1.2)',
+                'rgba(153, 102, 255, 1.2)',
+                'rgba(75, 192, 192, 1.2)'
+            ],
+
+            borderWidth: 3
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+
+    <footer class="rodape">   
+        <span style="margin-top: 50px "><h3>IFSP - CAMPINAS / 2017</h3></span>
+    </footer>
+        <div class="col-md-4" style="margin-left: 400px margin-bottom:  225px; float: right" >        
+            <img src="http://networkstatic.net/wp-content/uploads/2012/09/python.png">
+            <img src="http://fronteiratec.com/wp-content/uploads/2015/11/django_splash.png"> 
+            <img scr="https://matplotlib.org/_static/logo2.svg">
+        </div>
+
+
+</body>
+</html>

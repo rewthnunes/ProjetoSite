@@ -9,10 +9,17 @@ def pagina_exibir(request):
 
 	 sp = SaoPaulo.objects.all() 
 	 hb = Populacao.objects.all()
-	 context = {'sp': sp, 'hb': hb}
+	 context	 = {'sp': sp, 'hb': hb}
 	 
 	 return render(request, 'paginas/pagina_exibir.html', context)
 
+def grafico_exibir(request):
+
+	 sp = SaoPaulo.objects.all() 
+	 hb = Populacao.objects.all()
+	 context	 = {'sp': sp, 'hb': hb}
+	 
+	 return render(request, 'paginas/grafico_exibir.html', context)
 
 
 

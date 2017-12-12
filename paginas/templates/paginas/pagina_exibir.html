@@ -4,12 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<style>
-
-</style>
+<link rel="shortcut icon" href="https://www.iconsdb.com/green-icons/python-icon.html" type="image/x-icon"/>
+<style></style>
 
 	<title>Projeto Python</title>
+
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
     rel="stylesheet" type="text/css">
 
@@ -17,7 +16,7 @@
 
 </head>
 
-<body>    
+<body>  
 
         <div class="container-fluid">
             <div class="section">
@@ -28,18 +27,31 @@
                                 <h1>Dados Coletados...</h1>   
                                 <h2>Priscila / Rewth</h2>
                                 <h3>Projeto: Difusão da Informação na Administração Pública</h3>
-                                <p><a href="https://github.com/rewthnunes/ProjetoSite" target="_blank"><i>Repositório do projeto (aqui)<i></a></p>  
+
+                                <ul class="topnav">
+                                    <li><a class="active" data-toggle="tooltip" data-placement="bottom" title="Página Inicial" href="http://localhost:8000">Home</a></li>
+
+                                    <li><a data-toggle="tooltip" data-placement="bottom" title="Acesso Administrador" href="http://localhost:8000/admin/login/?next=/admin/">Admin</a></li>
+
+                                    <li><a data-toggle="tooltip" data-placement="bottom" title="Site Framework" href="http://www.chartjs.org/" target="_blank">Chart.js</a></li>
+
+                                    <li class="right">
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Git do Projeto" href="https://github.com/rewthnunes/ProjetoSite" target="_blank">Github</a></li>
+                                </ul>
                                                    
-                                <img class="logotipo" src="https://cmp.ifsp.edu.br/portal/images/ifsp.png">
+                                <img class="logotipo" src="https://www2.cmp.ifsp.edu.br/portal/images/ifsp.png">
                                 
                             </div>  
                         </div>
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>   
+
    
     {% for sp in sp %}
+
+
         
         <div class="section">
             <div class="container">
@@ -50,24 +62,37 @@
                         </div>
                         <div class="panel-body">
                             <p><span class="negrit">Região :</span>{{sp.regiao}}</p>
-                            <p><span class="negrit">Ano Base :</span>{{sp.ano}}</p> 
-                            {% for hb in hb %}                      
+                            <p><span class="negrit">Ano Base :</span>{{sp.ano}}</p>             
+                                                  
                             <p><span class="negrit">Qtd Habitantes :</span>{{hb.numero}}</p>    
-                            {% endfor %}                
+                                            
                             <p><span class="negrit">D1 - Maturidade : </span>{{sp.D1}}</p>
-                            <p><span class="negrit">D2 - Cominicabilidade : </span>{{sp.D2}}</p>
+                            <p><span class="negrit">D2 - Cominicabilidade : </span> {{sp.D2}}</p>
                             <p><span class="negrit">D3 - Disponibilidade :</span>{{sp.D3}}</p> 
                             <p><span class="negrit">D4 - Multiplicidade Acesso : </span>{{sp.D4}}</p>
                             <p><span class="negrit">D5 - Acessibilidade :</span> {{sp.D5}} </p>
                             <p><span class="negrit">D6 - Confiabilidade: </span>{{sp.D6}}</p>
                             <p><span class="negrit">D7 - Usabilidade :</span>{{sp.D7}}</p>
                             <p><span class="negrit">D8 - Transparência :</span>{{sp.D8}}</p>
-                            <p><span class="negrit">D9 - Prestaçao de Conta :</span>{{sp.D9}}</p>     
-                            <button class="button button2" type="submit" id="btnUpdate" data-dismiss="modal">Next ></button>
+                            <p><span class="negrit">D9 - Prestaçao de Conta :</span>{{sp.D9}}</p>  
+                            <a href="grafico_exibir/" > 
+                            <button class="button button2" type="button" id="btnUpdate" data-toogle="modal"  >Visualizar ></button>
+                            </a>   
                             
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+
+        <div class="modal" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">modal header</div>
+                    <div class="modal-body">modal body</div>
+                    <div class="modal-footer">modal footer</div>
+                </div>                
             </div>
         </div>
 
